@@ -1,0 +1,40 @@
+@hotelID = d7e927f6-6401-4e39-80bf-929e72f0992b
+
+GET http://localhost:8080/reservations
+
+###
+
+GET http://localhost:8080/hotels/{{hotelID}}/reservations
+
+
+###
+
+GET http://localhost:8080/hotels/{{hotelID}}/reservations/1
+
+###
+
+POST http://localhost:8080/hotels/{{hotelID}}/reservations
+Content-Type: application/json
+
+{
+  "hotel": {
+    "id": "{{hotelID}}",
+    "name": "Aloft Cleveland",
+    "address": {
+      "id": "523ddca1-c489-478b-b62e-7a3658e7d7b0",
+      "address": "1111 W 10th St",
+      "address2": "",
+      "city": "Cleveland",
+      "state": "OH",
+      "zip": "44113"
+    },
+    "rating": 3,
+    "roomsAvailable": 48,
+    "costPerNight": 274,
+    "coverImage": "aloft-cleveland.webp"
+  },
+  "fullName": "Dan Varga",
+  "checkinDate": "2019-11-16",
+  "checkoutDate": "2019-11-19",
+  "guests": 3
+},
